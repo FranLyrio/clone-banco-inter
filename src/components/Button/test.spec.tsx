@@ -1,14 +1,15 @@
 import '@testing-library/jest-dom/extend-expect'
-import { render, screen } from '@testing-library/react'
+import { screen } from '@testing-library/react'
+import { renderWithTheme } from '../../utils/tests/helper'
 
 import Button from '.'
 
 describe('<Button />', () => {
-	it('should render the heading', () => {
-		const { container } = render(<Button />)
+	it('should render Button', () => {
+		renderWithTheme(<Button>My button</Button>)
 
-		const heading = screen.getByRole('heading', { name: /Button/i })
+		const button = screen.getByRole('button', { name: /my button/i })
 
-		expect(heading).toBeInTheDocument()
+		expect(button).toBeInTheDocument()
 	})
 })
