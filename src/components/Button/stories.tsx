@@ -6,4 +6,10 @@ export default {
 	component: Button
 } as ComponentMeta<typeof Button>
 
-export const Basic: ComponentStory<typeof Button> = () => <Button />
+export const Template: ComponentStory<typeof Button> = (props) => (
+	<Button {...props} />
+)
+
+Template.args = {
+	children: 'Quero ser Inter'
+}
