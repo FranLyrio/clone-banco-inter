@@ -1,10 +1,30 @@
 import { ButtonHTMLAttributes } from 'react'
 import * as S from './styles'
 
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>
+export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+	size?: 'xxsmall' | 'xsmall' | 'small' | 'medium' | 'large'
+	bgColor?: 'orange' | 'white' | 'green'
+	borderRadius?: 'min' | 'medium'
+	hasSolidBorder?: boolean
+}
 
-const Button = ({ children, ...props }: ButtonProps) => (
-	<S.Wrapper {...props}>{children}</S.Wrapper>
+const Button = ({
+	children,
+	size = 'large',
+	bgColor = 'orange',
+	borderRadius = 'min',
+	hasSolidBorder = false,
+	...props
+}: ButtonProps) => (
+	<S.Wrapper
+		borderRadius={borderRadius}
+		hasSolidBorder={hasSolidBorder}
+		bgColor={bgColor}
+		size={size}
+		{...props}
+	>
+		{children}
+	</S.Wrapper>
 )
 
 export default Button
