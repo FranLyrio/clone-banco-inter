@@ -47,7 +47,7 @@ export default {
 			xxsmall: '15rem',
 			xsmall: '14rem',
 			small: '25rem',
-			medium: '265rem',
+			medium: '26.5rem',
 			large: '36rem'
 		},
 		height: {
