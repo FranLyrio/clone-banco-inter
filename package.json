@@ -10,7 +10,8 @@
 		"test": "jest",
 		"generate": "yarn plop --plopfile ./generators/plopfile.js",
 		"storybook": "start-storybook -s ./public -p 6006",
-		"build-storybook": "build-storybook -s ./public"
+		"build-storybook": "build-storybook -s ./public",
+		"prepare": "husky install"
 	},
 	"dependencies": {
 		"next": "10.0.7",
