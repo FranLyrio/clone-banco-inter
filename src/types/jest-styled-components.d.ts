@@ -3,37 +3,37 @@
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/ban-types */
-import { Plugin, NewPlugin } from 'pretty-format';
-import { css } from 'styled-components';
+import { Plugin, NewPlugin } from 'pretty-format'
+import { css } from 'styled-components'
 
 declare global {
 	namespace jest {
 		interface AsymmetricMatcher {
-			$$typeof: Symbol;
-			sample?: string | RegExp | object | Array<any> | Function;
+			$$typeof: Symbol
+			sample?: string | RegExp | object | Array<any> | Function
 		}
 
-		type Value = string | number | RegExp | AsymmetricMatcher | undefined;
+		type Value = string | number | RegExp | AsymmetricMatcher | undefined
 
 		interface Options {
-			media?: string;
-			modifier?: string | ReturnType<typeof css>;
-			supports?: string;
+			media?: string
+			modifier?: string | ReturnType<typeof css>
+			supports?: string
 		}
 
 		interface Matchers<R> {
-			toHaveStyleRule(property: string, value?: Value, options?: Options): R;
+			toHaveStyleRule(property: string, value?: Value, options?: Options): R
 		}
 	}
 }
 
 export interface StyledComponentsSerializerOptions {
-	addStyles?: boolean;
-	classNameFormatter?: (index: number) => string;
+	addStyles?: boolean
+	classNameFormatter?: (index: number) => string
 }
 
 export declare const styleSheetSerializer: Exclude<Plugin, NewPlugin> & {
 	setStyleSheetSerializerOptions: (
 		options?: StyledComponentsSerializerOptions
-	) => void;
-};
+	) => void
+}
